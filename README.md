@@ -1,2 +1,2 @@
 # AI-Projects
-variety of AI projects to expand my understanding and skills
+variety of small AI projects to expand my understanding and skills

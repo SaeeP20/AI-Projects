@@ -1,22 +1,41 @@
-#AI-Projects
-A variety of small AI projects to expand my understanding and skills
+# AI Business Analyst
 
-##Projects
+Automatically analyses the Online Retail dataset and emails the CEO
+a plain-English briefing every Monday morning.
 
-**List of Projects:**
-- Weather App using node.js
-- AI Analyst Agent
+## Setup
 
-###Weather App:
+1. Install dependencies:
+   pip install -r requirements.txt
 
-####How to run:
-1) Download the file
-2) Run the requirements folder to download dependencies
-3) Run the program. (It will open a window in your internet browser)
+2. Place your dataset in the data/ folder:
+   data/Online Retail.xlsx
 
-###AI Analyst Agent
+3. Set environment variables:
+   export ANTHROPIC_API_KEY=your_key_here
+   export EMAIL_SENDER=you@gmail.com
+   export EMAIL_PASSWORD=your_app_password
+   export CEO_EMAIL=ceo@example.com
 
-####How to run:
-1) Download zip file
-2) Run the requirements file to download dependencies and set virtual environment variables (edit these for own use)
-3) Navigate to main.py using the correct path and run in terminal using: python main.py --now
+4. Run immediately (for testing):
+   python main.py --now
+
+5. Run on a schedule (every Monday 07:00):
+   python main.py
+
+## Project structure
+
+   ai_analyst/
+   ├── data/
+   │   ├── loader.py          # Load and clean the Excel file
+   │   └── Online Retail.xlsx # Dataset goes here
+   ├── analysis/
+   │   ├── products.py        # Top products by revenue and quantity
+   │   ├── trends.py          # Weekly sales, growth, country breakdown
+   │   ├── churn.py           # RFM scoring and churn prediction
+   │   └── anomalies.py       # Unusual week detection
+   ├── report/
+   │   ├── generate.py        # Sends metrics to Claude, gets CEO briefing
+   │   └── email.py           # Emails the report
+   ├── main.py                # Runs the full pipeline and scheduler
+   └── requirements.txt

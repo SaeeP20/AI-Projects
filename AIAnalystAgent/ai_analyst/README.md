@@ -3,6 +3,9 @@
 Automatically analyses the Online Retail dataset and emails the CEO
 a plain-English briefing every Monday morning.
 
+## Current Issues:
+- Due to email mismatch with Azure and PowerBI, the program defaults to an excel report, not PowerBI
+
 ## Setup
 
 1. Install dependencies:
